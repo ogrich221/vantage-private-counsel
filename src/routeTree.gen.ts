@@ -10,33 +10,265 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
+import { Route as AssessMatterRouteImport } from './routes/assess-matter'
+import { Route as AttorneysRouteImport } from './routes/attorneys'
+import { Route as AuthRouteImport } from './routes/auth'
+import { Route as ConsultationRouteImport } from './routes/consultation'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as InsightsRouteImport } from './routes/insights'
+import { Route as LegalDisclaimerRouteImport } from './routes/legal-disclaimer'
+import { Route as OurFirmRouteImport } from './routes/our-firm'
+import { Route as PayOnlineRouteImport } from './routes/pay-online'
+import { Route as PracticeAreasRouteImport } from './routes/practice-areas'
+import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
+import { Route as ResetPasswordRouteImport } from './routes/reset-password'
+import { Route as TermsOfServiceRouteImport } from './routes/terms-of-service'
+import { Route as AuthenticatedDashboardRouteImport } from './routes/_authenticated/dashboard'
+import { Route as AttorneysSlugRouteImport } from './routes/attorneys_.$slug'
+import { Route as InsightsSlugRouteImport } from './routes/insights_.$slug'
+import { Route as PracticeAreasSlugRouteImport } from './routes/practice-areas_.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
+  id: '/_authenticated',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AssessMatterRoute = AssessMatterRouteImport.update({
+  id: '/assess-matter',
+  path: '/assess-matter',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AttorneysRoute = AttorneysRouteImport.update({
+  id: '/attorneys',
+  path: '/attorneys',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthRoute = AuthRouteImport.update({
+  id: '/auth',
+  path: '/auth',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConsultationRoute = ConsultationRouteImport.update({
+  id: '/consultation',
+  path: '/consultation',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InsightsRoute = InsightsRouteImport.update({
+  id: '/insights',
+  path: '/insights',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LegalDisclaimerRoute = LegalDisclaimerRouteImport.update({
+  id: '/legal-disclaimer',
+  path: '/legal-disclaimer',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OurFirmRoute = OurFirmRouteImport.update({
+  id: '/our-firm',
+  path: '/our-firm',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PayOnlineRoute = PayOnlineRouteImport.update({
+  id: '/pay-online',
+  path: '/pay-online',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PracticeAreasRoute = PracticeAreasRouteImport.update({
+  id: '/practice-areas',
+  path: '/practice-areas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
+  id: '/privacy-policy',
+  path: '/privacy-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResetPasswordRoute = ResetPasswordRouteImport.update({
+  id: '/reset-password',
+  path: '/reset-password',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsOfServiceRoute = TermsOfServiceRouteImport.update({
+  id: '/terms-of-service',
+  path: '/terms-of-service',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthenticatedDashboardRoute = AuthenticatedDashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
+const AttorneysSlugRoute = AttorneysSlugRouteImport.update({
+  id: '/attorneys_/$slug',
+  path: '/attorneys/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InsightsSlugRoute = InsightsSlugRouteImport.update({
+  id: '/insights_/$slug',
+  path: '/insights/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PracticeAreasSlugRoute = PracticeAreasSlugRouteImport.update({
+  id: '/practice-areas_/$slug',
+  path: '/practice-areas/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/assess-matter': typeof AssessMatterRoute
+  '/attorneys': typeof AttorneysRoute
+  '/auth': typeof AuthRoute
+  '/consultation': typeof ConsultationRoute
+  '/contact': typeof ContactRoute
+  '/insights': typeof InsightsRoute
+  '/legal-disclaimer': typeof LegalDisclaimerRoute
+  '/our-firm': typeof OurFirmRoute
+  '/pay-online': typeof PayOnlineRoute
+  '/practice-areas': typeof PracticeAreasRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/reset-password': typeof ResetPasswordRoute
+  '/terms-of-service': typeof TermsOfServiceRoute
+  '/dashboard': typeof AuthenticatedDashboardRoute
+  '/attorneys/$slug': typeof AttorneysSlugRoute
+  '/insights/$slug': typeof InsightsSlugRoute
+  '/practice-areas/$slug': typeof PracticeAreasSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/assess-matter': typeof AssessMatterRoute
+  '/attorneys': typeof AttorneysRoute
+  '/auth': typeof AuthRoute
+  '/consultation': typeof ConsultationRoute
+  '/contact': typeof ContactRoute
+  '/insights': typeof InsightsRoute
+  '/legal-disclaimer': typeof LegalDisclaimerRoute
+  '/our-firm': typeof OurFirmRoute
+  '/pay-online': typeof PayOnlineRoute
+  '/practice-areas': typeof PracticeAreasRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/reset-password': typeof ResetPasswordRoute
+  '/terms-of-service': typeof TermsOfServiceRoute
+  '/dashboard': typeof AuthenticatedDashboardRoute
+  '/attorneys/$slug': typeof AttorneysSlugRoute
+  '/insights/$slug': typeof InsightsSlugRoute
+  '/practice-areas/$slug': typeof PracticeAreasSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
+  '/assess-matter': typeof AssessMatterRoute
+  '/attorneys': typeof AttorneysRoute
+  '/auth': typeof AuthRoute
+  '/consultation': typeof ConsultationRoute
+  '/contact': typeof ContactRoute
+  '/insights': typeof InsightsRoute
+  '/legal-disclaimer': typeof LegalDisclaimerRoute
+  '/our-firm': typeof OurFirmRoute
+  '/pay-online': typeof PayOnlineRoute
+  '/practice-areas': typeof PracticeAreasRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/reset-password': typeof ResetPasswordRoute
+  '/terms-of-service': typeof TermsOfServiceRoute
+  '/_authenticated/dashboard': typeof AuthenticatedDashboardRoute
+  '/attorneys_/$slug': typeof AttorneysSlugRoute
+  '/insights_/$slug': typeof InsightsSlugRoute
+  '/practice-areas_/$slug': typeof PracticeAreasSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/assess-matter'
+    | '/attorneys'
+    | '/auth'
+    | '/consultation'
+    | '/contact'
+    | '/insights'
+    | '/legal-disclaimer'
+    | '/our-firm'
+    | '/pay-online'
+    | '/practice-areas'
+    | '/privacy-policy'
+    | '/reset-password'
+    | '/terms-of-service'
+    | '/dashboard'
+    | '/attorneys/$slug'
+    | '/insights/$slug'
+    | '/practice-areas/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/assess-matter'
+    | '/attorneys'
+    | '/auth'
+    | '/consultation'
+    | '/contact'
+    | '/insights'
+    | '/legal-disclaimer'
+    | '/our-firm'
+    | '/pay-online'
+    | '/practice-areas'
+    | '/privacy-policy'
+    | '/reset-password'
+    | '/terms-of-service'
+    | '/dashboard'
+    | '/attorneys/$slug'
+    | '/insights/$slug'
+    | '/practice-areas/$slug'
+  id:
+    | '__root__'
+    | '/'
+    | '/_authenticated'
+    | '/assess-matter'
+    | '/attorneys'
+    | '/auth'
+    | '/consultation'
+    | '/contact'
+    | '/insights'
+    | '/legal-disclaimer'
+    | '/our-firm'
+    | '/pay-online'
+    | '/practice-areas'
+    | '/privacy-policy'
+    | '/reset-password'
+    | '/terms-of-service'
+    | '/_authenticated/dashboard'
+    | '/attorneys_/$slug'
+    | '/insights_/$slug'
+    | '/practice-areas_/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
+  AssessMatterRoute: typeof AssessMatterRoute
+  AttorneysRoute: typeof AttorneysRoute
+  AuthRoute: typeof AuthRoute
+  ConsultationRoute: typeof ConsultationRoute
+  ContactRoute: typeof ContactRoute
+  InsightsRoute: typeof InsightsRoute
+  LegalDisclaimerRoute: typeof LegalDisclaimerRoute
+  OurFirmRoute: typeof OurFirmRoute
+  PayOnlineRoute: typeof PayOnlineRoute
+  PracticeAreasRoute: typeof PracticeAreasRoute
+  PrivacyPolicyRoute: typeof PrivacyPolicyRoute
+  ResetPasswordRoute: typeof ResetPasswordRoute
+  TermsOfServiceRoute: typeof TermsOfServiceRoute
+  AttorneysSlugRoute: typeof AttorneysSlugRoute
+  InsightsSlugRoute: typeof InsightsSlugRoute
+  PracticeAreasSlugRoute: typeof PracticeAreasSlugRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +280,165 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_authenticated': {
+      id: '/_authenticated'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof AuthenticatedRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/assess-matter': {
+      id: '/assess-matter'
+      path: '/assess-matter'
+      fullPath: '/assess-matter'
+      preLoaderRoute: typeof AssessMatterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/attorneys': {
+      id: '/attorneys'
+      path: '/attorneys'
+      fullPath: '/attorneys'
+      preLoaderRoute: typeof AttorneysRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/auth': {
+      id: '/auth'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof AuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/consultation': {
+      id: '/consultation'
+      path: '/consultation'
+      fullPath: '/consultation'
+      preLoaderRoute: typeof ConsultationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/insights': {
+      id: '/insights'
+      path: '/insights'
+      fullPath: '/insights'
+      preLoaderRoute: typeof InsightsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/legal-disclaimer': {
+      id: '/legal-disclaimer'
+      path: '/legal-disclaimer'
+      fullPath: '/legal-disclaimer'
+      preLoaderRoute: typeof LegalDisclaimerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/our-firm': {
+      id: '/our-firm'
+      path: '/our-firm'
+      fullPath: '/our-firm'
+      preLoaderRoute: typeof OurFirmRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pay-online': {
+      id: '/pay-online'
+      path: '/pay-online'
+      fullPath: '/pay-online'
+      preLoaderRoute: typeof PayOnlineRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/practice-areas': {
+      id: '/practice-areas'
+      path: '/practice-areas'
+      fullPath: '/practice-areas'
+      preLoaderRoute: typeof PracticeAreasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy-policy': {
+      id: '/privacy-policy'
+      path: '/privacy-policy'
+      fullPath: '/privacy-policy'
+      preLoaderRoute: typeof PrivacyPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reset-password': {
+      id: '/reset-password'
+      path: '/reset-password'
+      fullPath: '/reset-password'
+      preLoaderRoute: typeof ResetPasswordRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms-of-service': {
+      id: '/terms-of-service'
+      path: '/terms-of-service'
+      fullPath: '/terms-of-service'
+      preLoaderRoute: typeof TermsOfServiceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_authenticated/dashboard': {
+      id: '/_authenticated/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof AuthenticatedDashboardRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/attorneys_/$slug': {
+      id: '/attorneys_/$slug'
+      path: '/attorneys/$slug'
+      fullPath: '/attorneys/$slug'
+      preLoaderRoute: typeof AttorneysSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/insights_/$slug': {
+      id: '/insights_/$slug'
+      path: '/insights/$slug'
+      fullPath: '/insights/$slug'
+      preLoaderRoute: typeof InsightsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/practice-areas_/$slug': {
+      id: '/practice-areas_/$slug'
+      path: '/practice-areas/$slug'
+      fullPath: '/practice-areas/$slug'
+      preLoaderRoute: typeof PracticeAreasSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
+interface AuthenticatedRouteRouteChildren {
+  AuthenticatedDashboardRoute: typeof AuthenticatedDashboardRoute
+}
+
+const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
+  AuthenticatedDashboardRoute: AuthenticatedDashboardRoute,
+}
+
+const AuthenticatedRouteRouteWithChildren =
+  AuthenticatedRouteRoute._addFileChildren(AuthenticatedRouteRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
+  AssessMatterRoute: AssessMatterRoute,
+  AttorneysRoute: AttorneysRoute,
+  AuthRoute: AuthRoute,
+  ConsultationRoute: ConsultationRoute,
+  ContactRoute: ContactRoute,
+  InsightsRoute: InsightsRoute,
+  LegalDisclaimerRoute: LegalDisclaimerRoute,
+  OurFirmRoute: OurFirmRoute,
+  PayOnlineRoute: PayOnlineRoute,
+  PracticeAreasRoute: PracticeAreasRoute,
+  PrivacyPolicyRoute: PrivacyPolicyRoute,
+  ResetPasswordRoute: ResetPasswordRoute,
+  TermsOfServiceRoute: TermsOfServiceRoute,
+  AttorneysSlugRoute: AttorneysSlugRoute,
+  InsightsSlugRoute: InsightsSlugRoute,
+  PracticeAreasSlugRoute: PracticeAreasSlugRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

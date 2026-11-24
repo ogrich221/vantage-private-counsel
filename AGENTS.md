@@ -28,3 +28,10 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Application architecture
+- Keep public content in browser-safe content modules and give each content page a leaf route with its own metadata; dynamic detail filenames unnest from directory pages to avoid rendering both pages.
+- Client records use authenticated server functions and owner-scoped RLS; store private files in per-user folders and issue short-lived signed download URLs.
+- Simulated payments must always persist with the immutable simulated flag; they never collect banking or card credentials.
+- Public inquiries allow insert-only anonymous access with database validation; personal inquiries can be read only by their signed-in owner.
+- Keep presentation at the existing baseline until the missing visual reference is supplied, then implement the cohesive reference design in the global token system.
