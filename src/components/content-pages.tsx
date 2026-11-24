@@ -9,10 +9,123 @@ export function PracticeDetail({ slug }: { slug: string }) {
   if (!p) return null;
   return <Page title={p.name} intro={p.intro}><div className="max-w-3xl"><h2 className="text-2xl">Focused on your objectives</h2><p className="mt-4">Our fictional {p.name.toLowerCase()} practice illustrates how legal analysis, commercial understanding, and strategic planning can work together. Every proposed engagement begins with understanding the client's objectives and the circumstances of the matter.</p><h2 className="mt-8 text-2xl">Services and specializations</h2><ul className="mt-4 grid gap-3">{p.services.map(service => <li key={service}>— {service}</li>)}</ul><h2 className="mt-8 text-2xl">Why clients choose this approach</h2><p className="mt-4">Clear communication, practical options, and careful attention to the decisions that matter. We aim to present a coordinated perspective rather than advice in isolation. These are illustrative service descriptions, not claims of real representation or results.</p><div className="mt-8 flex flex-wrap gap-3"><Button asChild><Link to="/consultation">Request a Consultation</Link></Button><Button asChild variant="outline"><Link to="/contact">Contact the Legal Team</Link></Button></div></div></Page>;
 }
-export function AttorneyDirectory() { return <Page title="Our Attorneys" intro="Different perspectives. A shared commitment to thoughtful counsel."><p>All people below are fictional demonstration profiles. No bar admissions, qualifications, awards, or memberships are claimed.</p><div className="mt-8 grid gap-8 md:grid-cols-2">{attorneys.map(a => <article key={a.slug} className="border-b border-border pb-6"><h2 className="text-2xl">{a.name}</h2><p className="mt-2">{a.title} · {a.practice}</p><p className="my-4">{a.bio}</p><div className="flex flex-wrap gap-3"><Button asChild variant="outline"><Link to="/attorneys/$slug" params={{ slug: a.slug }}>View Full Profile</Link></Button><Button asChild variant="link"><Link to="/contact">Contact Attorney</Link></Button></div></article>)}</div></Page>; }
+export function AttorneyDirectory() {
+  return (
+    <Page
+      title="Our Attorneys"
+      intro="Senior partner leadership. Direct counsel. A steadfast commitment to strategic advocacy."
+    >
+      <div className="grid gap-8 md:grid-cols-2">
+        {attorneys.map((a) => (
+          <article
+            key={a.slug}
+            className="flex flex-col sm:flex-row gap-6 rounded-sm border border-border bg-card p-6 transition-all hover:border-primary/40 hover:shadow-xs"
+          >
+            {a.image && (
+              <div className="w-full sm:w-40 shrink-0 aspect-[4/5] rounded-xs overflow-hidden bg-muted">
+                <img
+                  src={a.image}
+                  alt={a.name}
+                  width={200}
+                  height={250}
+                  loading="lazy"
+                  className="size-full object-cover object-top filter grayscale hover:grayscale-0 transition-all duration-200"
+                />
+              </div>
+            )}
+            <div className="flex flex-col justify-between">
+              <div>
+                <span className="text-[0.65rem] uppercase tracking-wider font-semibold text-primary block">
+                  {a.practice}
+                </span>
+                <h2 className="text-2xl font-serif font-bold text-foreground mt-1">
+                  <Link to="/attorneys/$slug" params={{ slug: a.slug }} className="hover:text-primary transition-colors">
+                    {a.name}
+                  </Link>
+                </h2>
+                <p className="mt-1 text-xs text-muted-foreground font-medium uppercase tracking-wider">
+                  {a.title}
+                </p>
+
+                {a.convincingDetail && (
+                  <div className="mt-3 rounded-xs border-l-2 border-primary bg-muted/60 p-2.5 text-xs text-foreground/90 font-medium italic">
+                    "{a.convincingDetail}"
+                  </div>
+                )}
+
+                <p className="my-3 text-sm text-muted-foreground leading-relaxed">{a.bio}</p>
+              </div>
+
+              <div className="flex flex-wrap gap-3 pt-2 border-t border-border/60">
+                <Button asChild size="sm" variant="outline">
+                  <Link to="/attorneys/$slug" params={{ slug: a.slug }}>
+                    View Full Profile
+                  </Link>
+                </Button>
+                <Button asChild size="sm" variant="ghost">
+                  <Link to="/contact">Contact Attorney</Link>
+                </Button>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </Page>
+  );
+}
+
 export function AttorneyDetail({ slug }: { slug: string }) {
-  const a = attorneys.find(item => item.slug === slug);
+  const a = attorneys.find((item) => item.slug === slug);
   if (!a) return null;
-  return <Page title={a.name} intro={`${a.title} · ${a.practice}`}><p className="max-w-3xl">{a.bio}</p><h2 className="mt-8 text-2xl">Illustrative areas of experience</h2><ul className="mt-4 grid gap-3">{a.experience.map(item => <li key={item}>{item}</li>)}</ul><p className="mt-8">Fictional demonstration profile. This is not a real licensed attorney, and no professional credentials or memberships are represented.</p><Button asChild className="mt-6"><Link to="/contact">Contact Attorney</Link></Button></Page>;
+  return (
+    <Page title={a.name} intro={`${a.title} · ${a.practice}`}>
+      <div className="grid gap-10 md:grid-cols-12 max-w-5xl">
+        {a.image && (
+          <div className="md:col-span-4">
+            <div className="aspect-[4/5] overflow-hidden rounded-xs border border-border bg-muted">
+              <img
+                src={a.image}
+                alt={a.name}
+                width={400}
+                height={500}
+                className="size-full object-cover object-top"
+              />
+            </div>
+            {a.convincingDetail && (
+              <div className="mt-4 rounded-xs border-l-2 border-primary bg-muted/60 p-3 text-xs leading-relaxed text-foreground/90">
+                <span className="block text-[0.65rem] font-bold uppercase tracking-wider text-primary mb-1">
+                  Track Record Highlight
+                </span>
+                <p className="font-medium italic">"{a.convincingDetail}"</p>
+              </div>
+            )}
+          </div>
+        )}
+        <div className={a.image ? "md:col-span-8" : "md:col-span-12"}>
+          <h2 className="text-2xl font-serif font-bold">Biography & Practice Focus</h2>
+          <p className="mt-4 text-base text-muted-foreground leading-relaxed">{a.bio}</p>
+
+          <h2 className="mt-8 text-2xl font-serif font-bold">Key Areas of Practice & Experience</h2>
+          <ul className="mt-4 grid gap-2.5">
+            {a.experience.map((item) => (
+              <li key={item} className="flex items-center gap-2 text-sm text-foreground">
+                <span className="size-1.5 rounded-full bg-primary" />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+
+          <div className="mt-10 flex flex-wrap gap-4 pt-6 border-t border-border">
+            <Button asChild size="lg">
+              <Link to="/consultation">Schedule Consultation with {a.name.split(" ")[0]}</Link>
+            </Button>
+            <Button asChild size="lg" variant="outline">
+              <Link to="/contact">Direct Office Inquiry</Link>
+            </Button>
+          </div>
+        </div>
+      </div>
+    </Page>
+  );
 }
 export function FirmPage() { return <Page title="Our Firm" intro="Thoughtful counsel. Strategic perspective. A commitment to what matters."><div className="max-w-3xl grid gap-8"><section><h2 className="text-2xl">VANTAGE HALLCOUNSEL</h2><p className="mt-4">VANTAGE HALLCOUNSEL is a fictional demonstration of a corporate law firm built around a simple philosophy: legal counsel should connect sound analysis with the realities of a client's world. Our illustrative practice brings together business, transactions, disputes, and regulatory perspectives.</p></section><section><h2 className="text-2xl">Our Mission</h2><p className="mt-4">Delivering thoughtful, strategic, and dependable legal guidance.</p></section><section><h2 className="text-2xl">Our Vision</h2><p className="mt-4">Building a respected legal institution recognized for professional excellence and client-focused representation.</p></section><section><h2 className="text-2xl">Our Values</h2><ul className="mt-4 grid gap-3">{["Integrity", "Professional Excellence", "Confidentiality", "Accountability", "Strategic Thinking", "Client Commitment"].map(value => <li key={value}>{value}</li>)}</ul></section><section><h2 className="text-2xl">Our Approach</h2><p className="mt-4">We combine legal knowledge, commercial awareness, and strategic planning to examine complicated matters from multiple perspectives. The process begins with listening, continues through careful analysis, and centers on clear options and informed decisions. Confidentiality is a professional value; it is not a promise that information submitted to this demonstration website is protected by attorney-client privilege.</p></section></div></Page>; }

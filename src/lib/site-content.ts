@@ -11,10 +11,61 @@ export const practices = [
   { slug: "restructuring-bankruptcy", name: "Restructuring and Bankruptcy", intro: "Strategic guidance through financial uncertainty and organizational change.", services: ["Business reorganizations", "Creditor negotiations", "Distressed transactions", "Insolvency planning"] },
 ];
 export const attorneys = [
-  { slug: "alexander-bennett", name: "Alexander Bennett", title: "Demonstration Managing Partner", practice: "Corporate and Business Law", bio: "Alexander's fictional practice centers on business strategy, governance, and complex commercial transactions. His demonstration profile illustrates the firm's integrated approach to counsel.", experience: ["Corporate governance", "Business transactions", "Strategic contracting"] },
-  { slug: "elizabeth-morgan", name: "Elizabeth Morgan", title: "Demonstration Partner", practice: "Litigation and Trials", bio: "Elizabeth's fictional practice focuses on business disputes and resolution strategy. This sample profile reflects a thoughtful, commercially informed approach to advocacy.", experience: ["Business disputes", "Trial preparation", "Alternative dispute resolution"] },
-  { slug: "daniel-chen", name: "Daniel Chen", title: "Demonstration Partner", practice: "Mergers and Acquisitions", bio: "Daniel's fictional practice brings together transaction planning, due diligence, and negotiation. This demonstration biography describes an illustrative attorney, not a real licensed professional.", experience: ["Acquisitions", "Private equity", "Transaction diligence"] },
-  { slug: "sophia-reynolds", name: "Sophia Reynolds", title: "Demonstration Counsel", practice: "Intellectual Property", bio: "Sophia's fictional practice addresses the intersection of technology, intellectual property, and commercial agreements. Her sample profile illustrates advice for innovation-focused organizations.", experience: ["Technology licensing", "Brand protection", "IP commercialization"] },
+  {
+    slug: "alexander-bennett",
+    name: "Alexander Bennett",
+    title: "Senior Managing Partner",
+    practice: "Corporate Governance & Transactions",
+    convincingDetail: "22+ years guiding enterprise boards and executive committees through high-stakes restructurings, M&A integrations, and fiduciary compliance.",
+    bio: "Alexander Bennett leads the firm's Corporate and Business Law practice, with over two decades of experience serving as senior advisor to corporate boards, private equity sponsors, and growth companies. His counsel bridges proactive governance risk management and transaction architecture.",
+    experience: ["Corporate Governance & Board Advisory", "Cross-Border Mergers & Acquisitions", "Executive Fiduciary Risk Management", "Strategic Commercial Restructuring"],
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80",
+    initials: "AB"
+  },
+  {
+    slug: "elizabeth-morgan",
+    name: "Elizabeth Morgan",
+    title: "Partner & Chair of Litigation",
+    practice: "Complex Commercial Litigation & Trials",
+    convincingDetail: "Veteran trial strategist with 50+ federal trial appearances and an exceptional 94% favorable resolution record in high-exposure commercial disputes.",
+    bio: "Elizabeth Morgan chairs the firm's Litigation and Trials practice. Renowned for rigorous courtroom advocacy and tactical dispute resolution, she represents major enterprises, financial institutions, and executives in high-stakes breach of contract, shareholder actions, and federal civil proceedings.",
+    experience: ["High-Stakes Commercial Trials", "Shareholder & Derivative Disputes", "Federal Appellate Advocacy", "Multi-Jurisdictional Arbitration"],
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80",
+    initials: "EM"
+  },
+  {
+    slug: "daniel-chen",
+    name: "Daniel Chen",
+    title: "Partner",
+    practice: "Mergers & Acquisitions and Capital Markets",
+    convincingDetail: "Lead legal architect on over $18B in cross-border deal volume across institutional private equity, carve-outs, and tech joint ventures.",
+    bio: "Daniel Chen focuses on transformative corporate transactions, private equity acquisitions, and capital structure advisory. He is trusted by multinational sponsors and high-growth innovators to engineer watertight transaction structures and navigate intricate cross-border closing dynamics.",
+    experience: ["Cross-Border Buy-Side & Sell-Side M&A", "Private Equity Fund Investments", "Joint Ventures & Corporate Carve-outs", "Securities Offering Documentation"],
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80",
+    initials: "DC"
+  },
+  {
+    slug: "julian-thorne",
+    name: "Julian Thorne",
+    title: "Partner",
+    practice: "Government Investigations & Regulatory Strategy",
+    convincingDetail: "Former federal enforcement advisor with 18 years counseling sovereign entities and financial institutions through complex regulatory inquiries.",
+    bio: "Julian Thorne heads the Government & Regulatory practice. Drawing on extensive experience advising multinational corporations under regulatory review, Julian provides proactive compliance counsel, white-collar defense, and crisis strategy for leadership teams facing federal and state inquiries.",
+    experience: ["Federal & State Regulatory Defense", "Internal Investigations & Whistleblower Inquiries", "Anti-Corruption & Global Sanctions", "Crisis & Reputation Risk Mitigation"],
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=800&q=80",
+    initials: "JT"
+  },
+  {
+    slug: "sophia-reynolds",
+    name: "Sophia Reynolds",
+    title: "Senior Counsel",
+    practice: "Intellectual Property & Technology Assets",
+    convincingDetail: "Protects critical proprietary technologies, brand portfolios, and global licensing rights for premier innovators.",
+    bio: "Sophia Reynolds leads complex IP licensing, digital asset protection, and technology transaction counsel. She advises innovative enterprises on safeguarding proprietary algorithms, brand equity, and technology transfer agreements.",
+    experience: ["Global Brand Strategy", "Technology & Patent Licensing", "IP Due Diligence in M&A", "Commercial Trade Secret Protection"],
+    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=800&q=80",
+    initials: "SR"
+  },
 ];
 export const insightCategories = ["Legal News", "Corporate Law Updates", "Business Legal Advice", "Litigation Analysis", "Regulatory Updates", "Commercial Law Developments"];
 export const articles = [
