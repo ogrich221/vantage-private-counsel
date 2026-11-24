@@ -57,5 +57,25 @@ export function SiteShell({ children }: { children: ReactNode }) {
 }
 
 export function Page({ title, intro, children }: { title: string; intro: string; children?: ReactNode }) {
-  return <main className="mx-auto max-w-7xl px-6 py-14"><p className="eyebrow mb-4">VANTAGE HALLCOUNSEL · STRATEGIC PRACTICE</p><h1 className="text-4xl md:text-5xl">{title}</h1><p className="mt-6 max-w-3xl text-lg">{intro}</p><div className="mt-10">{children}</div></main>;
+  return (
+    <main className="relative min-h-[calc(100vh-80px)] bg-slate-950 text-slate-100 py-16 px-6 overflow-hidden">
+      {/* Ambient background glow orbs for glass refraction */}
+      <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
+        <div className="absolute -top-32 left-1/4 size-[550px] rounded-full bg-primary/15 blur-[160px]" />
+        <div className="absolute top-1/2 -right-32 size-[500px] rounded-full bg-brand-green/12 blur-[170px]" />
+        <div className="absolute -bottom-24 left-1/3 size-[600px] rounded-full bg-blue-700/10 blur-[180px]" />
+      </div>
+      <div className="relative z-10 mx-auto max-w-7xl">
+        <div className="inline-flex items-center gap-2 rounded-full glass-pill px-3.5 py-1 text-xs uppercase tracking-[0.25em] text-brand-green mb-4">
+          <span className="size-1.5 rounded-full bg-brand-green" />
+          <span>VANTAGE HALLCOUNSEL · STRATEGIC PRACTICE</span>
+        </div>
+        <h1 className="text-4xl md:text-5xl font-serif font-bold text-white tracking-tight">{title}</h1>
+        <p className="mt-6 max-w-3xl text-lg text-slate-300 leading-relaxed">{intro}</p>
+        <div className="mt-10 glass-card-dark rounded-2xl p-8 md:p-12 border border-white/15 backdrop-blur-2xl shadow-2xl">
+          {children}
+        </div>
+      </div>
+    </main>
+  );
 }

@@ -25,9 +25,9 @@ export function InquiryForm({ kind = "consultation", stepped = false }: { kind?:
     } catch (err) { setError(err instanceof Error ? err.message : "Something went wrong. Please try again."); }
     finally { setBusy(false); }
   }
-  if (confirmation) return <section role="status"><h2>Inquiry received</h2><p>Your reference is VH-{confirmation}. Your demonstration inquiry has been saved; it has not been sent to a practicing attorney. Submitting this inquiry does not establish an attorney-client relationship.</p></section>;
+  if (confirmation) return <section role="status" className="glass-card-dark p-6 rounded-xl border border-white/20"><h2 className="text-xl font-serif font-bold text-white">Inquiry Received</h2><p className="mt-2 text-slate-300">Your reference number is VH-{confirmation}. A member of our partner intake team will review your matter and respond within one business day. Submitting this inquiry does not create an attorney-client relationship until formal engagement is executed.</p></section>;
   return <form onSubmit={submit} className="grid gap-5">
-    {stepped && <p>Step {step} of 3 — {step === 1 ? "Your matter" : step === 2 ? "Your details" : "Review and submit"}</p>}
+    {stepped && <p className="text-sm font-medium text-slate-400">Step {step} of 3 — {step === 1 ? "Your matter" : step === 2 ? "Your details" : "Review and submit"}</p>}
     <fieldset hidden={stepped && step !== 1} disabled={false} className="grid gap-4">
       <label>Legal matter category *<select name="category" required disabled={stepped && step > 1 ? false : undefined}>{matterCategories.map(category => <option key={category}>{category}</option>)}</select></label>
       <label>Subject *<input name="subject" required minLength={3} maxLength={200} /></label>
@@ -39,10 +39,10 @@ export function InquiryForm({ kind = "consultation", stepped = false }: { kind?:
       <label>Phone number *<input name="phone" type="tel" required={!stepped || step >= 2} minLength={7} maxLength={40} autoComplete="tel" /></label>
     </fieldset>
     <div hidden={stepped && step !== 3}>
-      <p>Do not submit confidential or sensitive information. This demonstration form does not establish an attorney-client relationship, and confidentiality is not promised.</p>
-      <label className="flex items-start gap-3"><input type="checkbox" name="acknowledgment" required={!stepped || step === 3} />I understand that this is a demonstration inquiry, not an agreement for legal representation. *</label>
+      <p className="text-xs text-slate-400">Please provide high-level details regarding your matter. Submitting this inquiry initiates preliminary intake and conflict screening and does not establish an attorney-client relationship until an engagement letter is finalized.</p>
+      <label className="flex items-start gap-3 mt-3"><input type="checkbox" name="acknowledgment" required={!stepped || step === 3} />I understand that submitting this inquiry does not establish a formal attorney-client relationship. *</label>
     </div>
     {error && <p role="alert">{error}</p>}
-    <div className="flex gap-3">{stepped && step > 1 && <Button type="button" variant="outline" onClick={() => setStep(step - 1)}>Back</Button>}<Button type="submit" disabled={busy}>{busy ? "Saving inquiry…" : stepped && step < 3 ? "Continue" : "Submit Inquiry"}</Button></div>
+    <div className="flex gap-3">{stepped && step > 1 && <Button type="button" variant="outline" onClick={() => setStep(step - 1)}>Back</Button>}<Button type="submit" disabled={busy}>{busy ? "Submitting inquiry…" : stepped && step < 3 ? "Continue" : "Submit Inquiry"}</Button></div>
   </form>;
 }

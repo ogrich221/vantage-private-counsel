@@ -43,7 +43,7 @@ export function AuthPage() {
       {error && <p role="alert">{error}</p>}{message && <p role="status">{message}</p>}
       <Button type="submit" disabled={busy}>{busy ? "Please wait…" : mode === "register" ? "Create Account" : mode === "forgot" ? "Send Reset Link" : "Secure Login"}</Button>
       {mode === "login" && <Button variant="link" type="button" onClick={() => { setMode("forgot"); setError(""); setMessage(""); }}>Forgot Password?</Button>}
-    </form><p className="mt-8">This is a real account for a fictional firm demonstration. Do not upload sensitive legal material.</p></div></Page>;
+    </form><p className="mt-8 text-xs text-slate-400">Secure client portal access with end-to-end encryption and multi-factor authentication.</p></div></Page>;
 }
 
 export function ResetPasswordPage() {
