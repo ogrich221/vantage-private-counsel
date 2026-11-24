@@ -186,3 +186,24 @@
 
 @utility eyebrow { font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 600; color: var(--brand-green); }
 @utility tricolor { background: linear-gradient(90deg, var(--brand-green) 0 33.3%, var(--navy-foreground) 33.3% 66.6%, var(--primary) 66.6%); }
+
+@keyframes court-spin-ltr {
+  0% {
+    transform: translate3d(-50%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0%, 0, 0);
+  }
+}
+
+.animate-court-spin {
+  display: flex;
+  width: 200%;
+  animation: court-spin-ltr 40s linear infinite;
+  will-change: transform;
+}
+
+.animate-court-spin:hover {
+  animation-play-state: paused;
+}
+

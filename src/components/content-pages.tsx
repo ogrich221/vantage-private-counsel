@@ -29,7 +29,7 @@ export function AttorneyDirectory() {
                   width={200}
                   height={250}
                   loading="lazy"
-                  className="size-full object-cover object-top filter grayscale hover:grayscale-0 transition-all duration-200"
+                  className="size-full object-cover object-top filter contrast-[1.02] hover:scale-105 transition-all duration-300"
                 />
               </div>
             )}

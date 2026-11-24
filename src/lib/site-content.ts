@@ -19,7 +19,7 @@ export const attorneys = [
     convincingDetail: "22+ years guiding enterprise boards and executive committees through high-stakes restructurings, M&A integrations, and fiduciary compliance.",
     bio: "Alexander Bennett leads the firm's Corporate and Business Law practice, with over two decades of experience serving as senior advisor to corporate boards, private equity sponsors, and growth companies. His counsel bridges proactive governance risk management and transaction architecture.",
     experience: ["Corporate Governance & Board Advisory", "Cross-Border Mergers & Acquisitions", "Executive Fiduciary Risk Management", "Strategic Commercial Restructuring"],
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80",
+    image: "/images/alexander-bennett.jpg",
     initials: "AB"
   },
   {
@@ -30,7 +30,7 @@ export const attorneys = [
     convincingDetail: "Veteran trial strategist with 50+ federal trial appearances and an exceptional 94% favorable resolution record in high-exposure commercial disputes.",
     bio: "Elizabeth Morgan chairs the firm's Litigation and Trials practice. Renowned for rigorous courtroom advocacy and tactical dispute resolution, she represents major enterprises, financial institutions, and executives in high-stakes breach of contract, shareholder actions, and federal civil proceedings.",
     experience: ["High-Stakes Commercial Trials", "Shareholder & Derivative Disputes", "Federal Appellate Advocacy", "Multi-Jurisdictional Arbitration"],
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80",
+    image: "/images/elizabeth-morgan.jpg",
     initials: "EM"
   },
   {
@@ -41,7 +41,7 @@ export const attorneys = [
     convincingDetail: "Lead legal architect on over $18B in cross-border deal volume across institutional private equity, carve-outs, and tech joint ventures.",
     bio: "Daniel Chen focuses on transformative corporate transactions, private equity acquisitions, and capital structure advisory. He is trusted by multinational sponsors and high-growth innovators to engineer watertight transaction structures and navigate intricate cross-border closing dynamics.",
     experience: ["Cross-Border Buy-Side & Sell-Side M&A", "Private Equity Fund Investments", "Joint Ventures & Corporate Carve-outs", "Securities Offering Documentation"],
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80",
+    image: "/images/daniel-chen.jpg",
     initials: "DC"
   },
   {
@@ -52,7 +52,7 @@ export const attorneys = [
     convincingDetail: "Former federal enforcement advisor with 18 years counseling sovereign entities and financial institutions through complex regulatory inquiries.",
     bio: "Julian Thorne heads the Government & Regulatory practice. Drawing on extensive experience advising multinational corporations under regulatory review, Julian provides proactive compliance counsel, white-collar defense, and crisis strategy for leadership teams facing federal and state inquiries.",
     experience: ["Federal & State Regulatory Defense", "Internal Investigations & Whistleblower Inquiries", "Anti-Corruption & Global Sanctions", "Crisis & Reputation Risk Mitigation"],
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=800&q=80",
+    image: "/images/julian-thorne.jpg",
     initials: "JT"
   },
   {

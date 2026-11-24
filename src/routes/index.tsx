@@ -34,20 +34,35 @@ export function Index() {
 
   return (
     <main className="bg-background text-foreground">
-      {/* HERO SECTION - Architectural, Grounded, Dignified (No 3D / Cartoon gimmicks) */}
-      <section className="relative overflow-hidden bg-navy text-navy-foreground border-b border-navy-foreground/10">
-        <img
-          src={heroImg}
-          alt="Financial district skyline at twilight"
-          width={1920}
-          height={1088}
-          className="absolute inset-0 size-full object-cover opacity-35 filter saturate-75"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/90 to-navy/70" />
-        <div className="relative mx-auto max-w-7xl px-6 py-24 md:py-36">
-          <div className="inline-flex items-center gap-2 rounded-sm border border-navy-foreground/20 bg-navy-foreground/5 px-3 py-1 text-xs uppercase tracking-[0.25em] text-navy-foreground/80">
-            <span className="size-1.5 rounded-full bg-brand-green" />
-            VANTAGE HALL COUNSEL · PRIVATE & ENTERPRISE PRACTICE
+      {/* HERO SECTION - Ultra-Modern Court Facility with Continuous Left-to-Right Panoramic Spin */}
+      <section className="relative overflow-hidden bg-navy text-navy-foreground border-b border-navy-foreground/15 min-h-[620px] lg:min-h-[720px] flex flex-col justify-center">
+        {/* CONTINUOUS ROTATING / PANNING ULTRA-MODERN COURT FACILITY */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none select-none">
+          <div className="animate-court-spin h-full flex">
+            <div className="relative h-full w-1/2 shrink-0">
+              <img
+                src="/images/modern-court-facility.jpg"
+                alt="Ultra-modern supreme court facility architectural hall"
+                className="size-full object-cover object-center filter brightness-90 contrast-115 saturate-110"
+              />
+            </div>
+            <div className="relative h-full w-1/2 shrink-0">
+              <img
+                src="/images/modern-court-facility.jpg"
+                alt="Ultra-modern supreme court facility architectural hall"
+                className="size-full object-cover object-center filter brightness-90 contrast-115 saturate-110"
+              />
+            </div>
+          </div>
+          {/* Architectural gradient overlays ensuring text clarity and dramatic depth */}
+          <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/85 to-navy/55 backdrop-blur-[0.5px]" />
+          <div className="absolute inset-0 bg-gradient-to-t from-navy via-transparent to-navy/40" />
+        </div>
+
+        <div className="relative mx-auto max-w-7xl px-6 py-24 md:py-36 w-full">
+          <div className="inline-flex items-center gap-2 rounded-full border border-brand-green/40 bg-navy/80 backdrop-blur-md px-3.5 py-1 text-xs uppercase tracking-[0.25em] text-navy-foreground/90 shadow-xs">
+            <span className="size-2 rounded-full bg-brand-green animate-pulse" />
+            VANTAGE HALL COUNSEL · ULTRA-MODERN JUDICIAL FACILITY
           </div>
 
           <h1 className="mt-6 max-w-4xl font-serif text-4xl leading-[1.15] md:text-6xl lg:text-7xl">
@@ -68,7 +83,7 @@ export function Index() {
               asChild
               size="lg"
               variant="outline"
-              className="border-navy-foreground/30 bg-transparent uppercase tracking-wider text-xs text-navy-foreground hover:bg-navy-foreground/10 hover:text-navy-foreground px-6 py-6"
+              className="border-navy-foreground/30 bg-navy/40 backdrop-blur-sm uppercase tracking-wider text-xs text-navy-foreground hover:bg-navy-foreground/15 hover:text-navy-foreground px-6 py-6"
             >
               <Link to="/consultation">Request Confidential Consultation</Link>
             </Button>
@@ -76,7 +91,7 @@ export function Index() {
               asChild
               size="lg"
               variant="ghost"
-              className="text-navy-foreground/80 hover:text-navy-foreground hover:bg-white/5 uppercase tracking-wider text-xs px-5 py-6"
+              className="text-navy-foreground/80 hover:text-navy-foreground hover:bg-white/10 uppercase tracking-wider text-xs px-5 py-6"
             >
               <Link to="/pay-online">Client Payment Portal</Link>
             </Button>
@@ -139,7 +154,7 @@ export function Index() {
                     width={400}
                     height={500}
                     loading="lazy"
-                    className="size-full object-cover object-top filter grayscale contrast-105 group-hover:grayscale-0 group-hover:scale-[1.02] transition-all duration-300"
+                    className="size-full object-cover object-top filter contrast-[1.02] group-hover:scale-[1.03] transition-all duration-300"
                     onError={(e) => {
                       // Fallback if image network fails
                       e.currentTarget.style.display = "none";
