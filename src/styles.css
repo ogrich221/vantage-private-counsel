@@ -152,4 +152,24 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
   }
+
+  main input:not([type="checkbox"]):not([type="file"]), main select, main textarea {
+    display: block;
+    width: 100%;
+    min-height: 2.5rem;
+    margin-top: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--input);
+    border-radius: var(--radius-md);
+    background: var(--background);
+    color: var(--foreground);
+  }
+
+  main input:focus-visible, main select:focus-visible, main textarea:focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+
+  main p, main li, footer p { overflow-wrap: anywhere; }
+  fieldset[hidden], div[hidden] { display: none; }
 }
