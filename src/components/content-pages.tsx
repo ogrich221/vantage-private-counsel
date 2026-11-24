@@ -7,7 +7,7 @@ export function PracticeDirectory() { return <Page title="Practice Areas" intro=
 export function PracticeDetail({ slug }: { slug: string }) {
   const p = practices.find(item => item.slug === slug);
   if (!p) return null;
-  return <Page title={p.name} intro={p.intro}><div className="max-w-3xl"><h2 className="text-2xl">Focused on your objectives</h2><p className="mt-4">Our fictional {p.name.toLowerCase()} practice illustrates how legal analysis, commercial understanding, and strategic planning can work together. Every proposed engagement begins with understanding the client's objectives and the circumstances of the matter.</p><h2 className="mt-8 text-2xl">Services and specializations</h2><ul className="mt-4 grid gap-3">{p.services.map(service => <li key={service}>— {service}</li>)}</ul><h2 className="mt-8 text-2xl">Why clients choose this approach</h2><p className="mt-4">Clear communication, practical options, and careful attention to the decisions that matter. We aim to present a coordinated perspective rather than advice in isolation. These are illustrative service descriptions, not claims of real representation or results.</p><div className="mt-8 flex flex-wrap gap-3"><Button asChild><Link to="/consultation">Request a Consultation</Link></Button><Button asChild variant="outline"><Link to="/contact">Contact the Legal Team</Link></Button></div></div></Page>;
+  return <Page title={p.name} intro={p.intro}><div className="max-w-3xl"><h2 className="text-2xl">Focused on your objectives</h2><p className="mt-4">Our {p.name.toLowerCase()} practice brings together rigorous legal analysis, deep commercial understanding, and strategic execution. Every engagement begins with understanding the client's commercial objectives and the nuances of the matter.</p><h2 className="mt-8 text-2xl">Services and specializations</h2><ul className="mt-4 grid gap-3">{p.services.map(service => <li key={service}>— {service}</li>)}</ul><h2 className="mt-8 text-2xl">Why clients choose this approach</h2><p className="mt-4">Clear communication, practical options, and careful attention to the decisions that matter. We aim to present a coordinated perspective rather than advice in isolation. Every engagement is tailored to our clients' strategic priorities and risk parameters.</p><div className="mt-8 flex flex-wrap gap-3"><Button asChild><Link to="/consultation">Request a Consultation</Link></Button><Button asChild variant="outline"><Link to="/contact">Contact the Legal Team</Link></Button></div></div></Page>;
 }
 export function AttorneyDirectory() {
   return (
@@ -128,4 +128,46 @@ export function AttorneyDetail({ slug }: { slug: string }) {
     </Page>
   );
 }
-export function FirmPage() { return <Page title="Our Firm" intro="Thoughtful counsel. Strategic perspective. A commitment to what matters."><div className="max-w-3xl grid gap-8"><section><h2 className="text-2xl">VANTAGE HALLCOUNSEL</h2><p className="mt-4">VANTAGE HALLCOUNSEL is a fictional demonstration of a corporate law firm built around a simple philosophy: legal counsel should connect sound analysis with the realities of a client's world. Our illustrative practice brings together business, transactions, disputes, and regulatory perspectives.</p></section><section><h2 className="text-2xl">Our Mission</h2><p className="mt-4">Delivering thoughtful, strategic, and dependable legal guidance.</p></section><section><h2 className="text-2xl">Our Vision</h2><p className="mt-4">Building a respected legal institution recognized for professional excellence and client-focused representation.</p></section><section><h2 className="text-2xl">Our Values</h2><ul className="mt-4 grid gap-3">{["Integrity", "Professional Excellence", "Confidentiality", "Accountability", "Strategic Thinking", "Client Commitment"].map(value => <li key={value}>{value}</li>)}</ul></section><section><h2 className="text-2xl">Our Approach</h2><p className="mt-4">We combine legal knowledge, commercial awareness, and strategic planning to examine complicated matters from multiple perspectives. The process begins with listening, continues through careful analysis, and centers on clear options and informed decisions. Confidentiality is a professional value; it is not a promise that information submitted to this demonstration website is protected by attorney-client privilege.</p></section></div></Page>; }
+export function FirmPage() {
+  return (
+    <Page title="Our Firm" intro="Thoughtful counsel. Strategic perspective. A commitment to what matters.">
+      <div className="max-w-3xl grid gap-8">
+        <section>
+          <h2 className="text-2xl font-serif font-bold">VANTAGE HALLCOUNSEL</h2>
+          <p className="mt-4 text-muted-foreground leading-relaxed">
+            VANTAGE HALLCOUNSEL is a premier corporate law practice built around an uncompromising philosophy: legal counsel should connect sound legal analysis with the commercial realities of our clients' world. Our multidisciplinary practice brings together corporate transactions, high-stakes dispute resolution, and regulatory strategy.
+          </p>
+        </section>
+        <section>
+          <h2 className="text-2xl font-serif font-bold">Our Mission</h2>
+          <p className="mt-4 text-muted-foreground leading-relaxed">
+            Delivering thoughtful, strategic, and dependable legal guidance with direct senior partner engagement across every mandate.
+          </p>
+        </section>
+        <section>
+          <h2 className="text-2xl font-serif font-bold">Our Vision</h2>
+          <p className="mt-4 text-muted-foreground leading-relaxed">
+            Building an enduring legal institution recognized for professional excellence, relentless advocacy, and client-focused representation.
+          </p>
+        </section>
+        <section>
+          <h2 className="text-2xl font-serif font-bold">Our Core Values</h2>
+          <ul className="mt-4 grid gap-3">
+            {["Integrity & Fiduciary Loyalty", "Professional Excellence", "Absolute Confidentiality", "Accountability & Transparency", "Strategic Commercial Thinking", "Direct Senior Partner Advocacy"].map((value) => (
+              <li key={value} className="flex items-center gap-2 text-sm text-foreground">
+                <span className="size-1.5 rounded-full bg-primary" />
+                <span>{value}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+        <section>
+          <h2 className="text-2xl font-serif font-bold">Our Approach</h2>
+          <p className="mt-4 text-muted-foreground leading-relaxed">
+            We combine rigorous legal acumen, commercial awareness, and strategic foresight to resolve complicated matters. The process begins with listening, continues through exhaustive analysis, and centers on decisive options that protect enterprise value and executive reputations.
+          </p>
+        </section>
+      </div>
+    </Page>
+  );
+}
