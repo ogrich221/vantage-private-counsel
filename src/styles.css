@@ -30,6 +30,11 @@
  */
 
 @theme inline {
+  --font-sans: "IBM Plex Sans", system-ui, sans-serif;
+  --font-serif: "Libre Baskerville", Georgia, serif;
+  --color-navy: var(--navy);
+  --color-navy-foreground: var(--navy-foreground);
+  --color-brand-green: var(--brand-green);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -73,15 +78,18 @@
 }
 
 :root {
-  --radius: 0.625rem;
+  --radius: 0.125rem;
+  --navy: oklch(0.2 0.04 265);
+  --navy-foreground: oklch(0.97 0.005 250);
+  --brand-green: oklch(0.6 0.13 155);
   --background: oklch(1 0 0);
   --foreground: oklch(0.129 0.042 264.695);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.129 0.042 264.695);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
+  --primary: oklch(0.53 0.2 25);
+  --primary-foreground: oklch(0.99 0 0);
   --secondary: oklch(0.968 0.007 247.896);
   --secondary-foreground: oklch(0.208 0.042 265.755);
   --muted: oklch(0.968 0.007 247.896);
@@ -92,7 +100,7 @@
   --destructive-foreground: oklch(0.984 0.003 247.858);
   --border: oklch(0.929 0.013 255.508);
   --input: oklch(0.929 0.013 255.508);
-  --ring: oklch(0.704 0.04 256.788);
+  --ring: oklch(0.53 0.2 25);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -149,6 +157,7 @@
   }
 
   body {
+    font-family: var(--font-sans);
     background-color: var(--color-background);
     color: var(--color-foreground);
   }
@@ -170,6 +179,10 @@
     outline-offset: 2px;
   }
 
+  h1, h2, h3 { font-family: var(--font-serif); letter-spacing: -0.01em; }
   main p, main li, footer p { overflow-wrap: anywhere; }
   fieldset[hidden], div[hidden] { display: none; }
 }
+
+@utility eyebrow { font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 600; color: var(--brand-green); }
+@utility tricolor { background: linear-gradient(90deg, var(--brand-green) 0 33.3%, var(--navy-foreground) 33.3% 66.6%, var(--primary) 66.6%); }
