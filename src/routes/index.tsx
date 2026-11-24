@@ -148,7 +148,7 @@ export function Index() {
                   <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-transparent to-transparent opacity-80" />
                   <div className="absolute bottom-3 left-3 right-3 text-white">
                     <span className="inline-block rounded-xs bg-navy/90 px-2.5 py-0.5 text-[0.65rem] uppercase tracking-wider font-semibold text-brand-green border border-brand-green/30">
-                      {lawyer.practice.split("&")[0].trim()}
+                      {lawyer.practice.split("&")[0]?.trim()}
                     </span>
                   </div>
                 </div>
