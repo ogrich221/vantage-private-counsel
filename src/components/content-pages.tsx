@@ -16,7 +16,7 @@ export function AttorneyDirectory() {
       intro="Senior partner leadership. Direct counsel. A steadfast commitment to strategic advocacy."
     >
       <div className="grid gap-8 md:grid-cols-2">
-        {attorneys.map((a) => (
+        {attorneys.filter((a) => a.slug !== "sophia-reynolds").map((a) => (
           <article
             key={a.slug}
             className="flex flex-col sm:flex-row gap-6 rounded-sm border border-border bg-card p-6 transition-all hover:border-primary/40 hover:shadow-xs"

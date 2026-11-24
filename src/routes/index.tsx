@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { siteMeta, attorneys } from "@/lib/site-content";
+import { useLanguage } from "@/lib/i18n";
 import {
   Scale,
   ShieldCheck,
@@ -27,6 +28,8 @@ export const Route = createFileRoute("/")({
 });
 
 export function Index() {
+  const { t } = useLanguage();
+
   // 4 Featured Hero Lawyers: 3 Male, 1 Female (Realistic Editorial Photography)
   const heroAttorneys = attorneys.filter((a) =>
     ["alexander-bennett", "elizabeth-morgan", "daniel-chen", "julian-thorne"].includes(a.slug)
@@ -71,15 +74,15 @@ export function Index() {
           {/* Glass Floating Badge */}
           <div className="inline-flex items-center gap-2.5 rounded-full glass-pill px-4 py-1.5 text-xs uppercase tracking-[0.25em] text-slate-200 shadow-lg">
             <span className="size-2 rounded-full bg-brand-green animate-pulse" />
-            <span>VANTAGE HALL COUNSEL · HIGH-STAKES ADVOCACY</span>
+            <span>{t("hero.eyebrow")}</span>
           </div>
 
           <h1 className="mt-6 max-w-4xl font-serif text-4xl leading-[1.12] md:text-6xl lg:text-7xl font-bold tracking-tight text-white drop-shadow-sm">
-            Decisive counsel for matters of enduring consequence.
+            {t("hero.headline")}
           </h1>
 
           <p className="mt-8 max-w-2xl text-lg leading-relaxed text-slate-300 drop-shadow-xs">
-            When enterprise stability, transformative transactions, or critical reputations hang in the balance, Vantage Hall delivers rigorous advocacy and discreet fiduciary counsel. We represent boards, private funds, and leadership teams with unyielding focus.
+            {t("hero.subhead")}
           </p>
 
           <div className="mt-10 flex flex-wrap items-center gap-4">
@@ -89,7 +92,7 @@ export function Index() {
               className="bg-primary text-white hover:bg-primary/90 font-medium px-7 py-6 text-base rounded-md shadow-lg shadow-primary/25 border border-white/20 transition-all hover:scale-[1.02]"
             >
               <Link to="/assess-matter">
-                Assess Your Legal Matter <ArrowRight className="ml-2 size-4" />
+                {t("hero.cta.assess")} <ArrowRight className="ml-2 size-4" />
               </Link>
             </Button>
             <Button
@@ -98,7 +101,7 @@ export function Index() {
               variant="outline"
               className="glass-pill border-white/25 text-white hover:bg-white/15 uppercase tracking-wider text-xs px-6 py-6 rounded-md transition-all hover:scale-[1.02]"
             >
-              <Link to="/consultation">Request Confidential Consultation</Link>
+              <Link to="/consultation">{t("hero.cta.consult")}</Link>
             </Button>
             <Button
               asChild
@@ -106,7 +109,7 @@ export function Index() {
               variant="ghost"
               className="text-slate-300 hover:text-white hover:bg-white/10 uppercase tracking-wider text-xs px-5 py-6 rounded-md transition-all"
             >
-              <Link to="/pay-online">Client Payment Portal</Link>
+              <Link to="/pay-online">{t("hero.cta.portal")}</Link>
             </Button>
           </div>
 
@@ -114,20 +117,20 @@ export function Index() {
           <div className="mt-16 glass-card-dark rounded-xl p-8 border border-white/15 backdrop-blur-2xl shadow-2xl">
             <div className="grid grid-cols-2 gap-8 sm:grid-cols-4">
               <div className="border-r border-white/10 last:border-r-0 pr-4">
-                <p className="font-serif text-3xl font-bold text-white md:text-4xl">$25B+</p>
-                <p className="mt-1.5 text-xs uppercase tracking-wider font-medium text-slate-400">Transaction & Advisory Volume</p>
+                <p className="font-serif text-3xl font-bold text-white md:text-4xl">{t("stats.volume")}</p>
+                <p className="mt-1.5 text-xs uppercase tracking-wider font-medium text-slate-400">{t("stats.volume.label")}</p>
               </div>
               <div className="border-r border-white/10 last:border-r-0 pr-4">
-                <p className="font-serif text-3xl font-bold text-brand-green md:text-4xl">94%</p>
-                <p className="mt-1.5 text-xs uppercase tracking-wider font-medium text-slate-400">Favorable Trial & Dispute Record</p>
+                <p className="font-serif text-3xl font-bold text-brand-green md:text-4xl">{t("stats.trial")}</p>
+                <p className="mt-1.5 text-xs uppercase tracking-wider font-medium text-slate-400">{t("stats.trial.label")}</p>
               </div>
               <div className="border-r border-white/10 last:border-r-0 pr-4">
-                <p className="font-serif text-3xl font-bold text-white md:text-4xl">35+</p>
-                <p className="mt-1.5 text-xs uppercase tracking-wider font-medium text-slate-400">Years Senior Partner Experience</p>
+                <p className="font-serif text-3xl font-bold text-white md:text-4xl">{t("stats.exp")}</p>
+                <p className="mt-1.5 text-xs uppercase tracking-wider font-medium text-slate-400">{t("stats.exp.label")}</p>
               </div>
               <div>
-                <p className="font-serif text-3xl font-bold text-white md:text-4xl">100%</p>
-                <p className="mt-1.5 text-xs uppercase tracking-wider font-medium text-slate-400">Partner-Led Direct Counsel</p>
+                <p className="font-serif text-3xl font-bold text-white md:text-4xl">{t("stats.counsel")}</p>
+                <p className="mt-1.5 text-xs uppercase tracking-wider font-medium text-slate-400">{t("stats.counsel.label")}</p>
               </div>
             </div>
           </div>
@@ -140,19 +143,19 @@ export function Index() {
           <div>
             <div className="inline-flex items-center gap-2 text-xs uppercase font-semibold tracking-[0.25em] text-brand-green">
               <Sparkles className="size-3.5" />
-              <span>Senior Leadership & Trial Counsel</span>
+              <span>{t("lawyers.eyebrow")}</span>
             </div>
             <h2 className="mt-3 font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-white">
-              Direct partner advocacy. Proven judgment.
+              {t("lawyers.title")}
             </h2>
             <p className="mt-4 max-w-2xl text-slate-400 text-base leading-relaxed">
-              We reject the volume-firm model of delegating critical decisions to junior associate pools. Every matter is personally strategized and executed by senior partners with battle-tested courtroom and boardroom records.
+              {t("lawyers.desc")}
             </p>
           </div>
           <div>
             <Button asChild variant="outline" className="glass-pill border-white/20 text-white hover:bg-white/15 font-medium px-5 py-5 rounded-md">
               <Link to="/attorneys">
-                View All Firm Attorneys <ArrowRight className="ml-2 size-4" />
+                {t("lawyers.viewAll")} <ArrowRight className="ml-2 size-4" />
               </Link>
             </Button>
           </div>
@@ -200,7 +203,7 @@ export function Index() {
                   {/* SIMPLE AND CONVINCING DETAIL IN FROSTED GLASS CALLOUT */}
                   <div className="mt-4 rounded-lg glass-pill border-l-2 border-primary p-3.5 text-xs leading-relaxed text-slate-200">
                     <span className="mb-1 block font-mono text-[0.65rem] font-bold uppercase tracking-wider text-primary">
-                      Track Record Highlight
+                      {t("lawyers.highlight")}
                     </span>
                     <p className="font-medium italic text-slate-100">"{lawyer.convincingDetail}"</p>
                   </div>
@@ -223,13 +226,13 @@ export function Index() {
                   params={{ slug: lawyer.slug }}
                   className="text-xs font-semibold uppercase tracking-wider text-primary hover:text-primary/80 inline-flex items-center gap-1 transition-colors"
                 >
-                  Full Profile <ArrowRight className="size-3" />
+                  {t("lawyers.fullProfile")} <ArrowRight className="size-3" />
                 </Link>
                 <Link
                   to="/contact"
                   className="text-xs text-slate-400 hover:text-white font-medium transition-colors"
                 >
-                  Direct Inquiry
+                  {t("lawyers.inquiry")}
                 </Link>
               </div>
             </article>
@@ -241,10 +244,10 @@ export function Index() {
       <section className="relative z-10 border-y border-white/10 py-24 lg:py-32 bg-slate-950/60 backdrop-blur-xl">
         <div className="mx-auto max-w-7xl px-6">
           <div className="max-w-3xl">
-            <p className="text-xs uppercase font-semibold tracking-[0.25em] text-brand-green">Disciplined Legal Capabilities</p>
-            <h2 className="mt-3 font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-white">Comprehensive counsel across commercial disciplines</h2>
+            <p className="text-xs uppercase font-semibold tracking-[0.25em] text-brand-green">{t("practices.eyebrow")}</p>
+            <h2 className="mt-3 font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-white">{t("practices.title")}</h2>
             <p className="mt-4 text-slate-400 text-base leading-relaxed">
-              We structure our practice around the critical lifecycle events of businesses, institutions, and family offices. Each practice area operates under senior partner direction with unified strategic oversight.
+              {t("practices.desc")}
             </p>
           </div>
 
@@ -315,7 +318,7 @@ export function Index() {
                       params={{ slug: p.slug }}
                       className="inline-flex items-center text-xs font-semibold uppercase tracking-wider text-primary hover:text-primary/80 transition-colors"
                     >
-                      Explore Practice Scope <ArrowRight className="ml-1.5 size-3" />
+                      {t("practices.explore")} <ArrowRight className="ml-1.5 size-3" />
                     </Link>
                   </div>
                 </div>
@@ -325,7 +328,7 @@ export function Index() {
 
           <div className="mt-12 text-center">
             <Button asChild variant="outline" size="lg" className="glass-pill border-white/20 text-white hover:bg-white/15 px-8 py-6 rounded-md">
-              <Link to="/practice-areas">Browse All 10 Practice Disciplines →</Link>
+              <Link to="/practice-areas">{t("practices.browseAll")}</Link>
             </Button>
           </div>
         </div>
@@ -335,12 +338,12 @@ export function Index() {
       <section className="relative z-10 mx-auto max-w-7xl px-6 py-24 lg:py-32">
         <div className="grid gap-12 lg:grid-cols-12 lg:items-center">
           <div className="lg:col-span-5">
-            <p className="text-xs uppercase font-semibold tracking-[0.25em] text-brand-green">The Vantage Standard</p>
+            <p className="text-xs uppercase font-semibold tracking-[0.25em] text-brand-green">{t("standard.eyebrow")}</p>
             <h2 className="mt-3 font-serif text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-white">
-              Why leadership trusts our counsel when everything is on the line.
+              {t("standard.title")}
             </h2>
             <p className="mt-6 text-slate-300 text-base leading-relaxed">
-              In high-stakes legal matters, conventional firm incentives often lead to bloated teams and generic memorandums. Vantage Hall operates under an uncompromising boutique model built for velocity, clarity, and accountability.
+              {t("standard.desc")}
             </p>
 
             <div className="mt-8 flex flex-col gap-4">
@@ -349,8 +352,8 @@ export function Index() {
                   <CheckCircle2 className="size-4" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-sm text-white">Direct Senior Oversight</h4>
-                  <p className="text-xs text-slate-400 mt-0.5">Your primary contact is the partner authoring your strategy, not an intermediary.</p>
+                  <h4 className="font-semibold text-sm text-white">{t("standard.p1.title")}</h4>
+                  <p className="text-xs text-slate-400 mt-0.5">{t("standard.p1.desc")}</p>
                 </div>
               </div>
               <div className="flex items-start gap-3.5 glass-pill p-3.5 rounded-lg border border-white/10">
@@ -358,8 +361,8 @@ export function Index() {
                   <CheckCircle2 className="size-4" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-sm text-white">Commercially Grounded Legal Strategy</h4>
-                  <p className="text-xs text-slate-400 mt-0.5">We align legal defense with enterprise balance sheets and commercial timelines.</p>
+                  <h4 className="font-semibold text-sm text-white">{t("standard.p2.title")}</h4>
+                  <p className="text-xs text-slate-400 mt-0.5">{t("standard.p2.desc")}</p>
                 </div>
               </div>
               <div className="flex items-start gap-3.5 glass-pill p-3.5 rounded-lg border border-white/10">
@@ -367,8 +370,8 @@ export function Index() {
                   <CheckCircle2 className="size-4" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-sm text-white">Absolute Institutional Discretion</h4>
-                  <p className="text-xs text-slate-400 mt-0.5">Stringent information barriers and confidential handling for reputation-sensitive matters.</p>
+                  <h4 className="font-semibold text-sm text-white">{t("standard.p3.title")}</h4>
+                  <p className="text-xs text-slate-400 mt-0.5">{t("standard.p3.desc")}</p>
                 </div>
               </div>
             </div>
@@ -379,36 +382,36 @@ export function Index() {
               <div className="size-10 rounded-lg glass-pill flex items-center justify-center text-primary border border-primary/30">
                 <Lock className="size-5" />
               </div>
-              <h3 className="mt-4 font-serif text-lg font-bold text-white">Fiduciary Rigor</h3>
+              <h3 className="mt-4 font-serif text-lg font-bold text-white">{t("standard.card1.title")}</h3>
               <p className="mt-2 text-xs text-slate-300 leading-relaxed">
-                We approach every engagement with strict fiduciary loyalty. We deliver candid assessments early, advising clients when to litigate fiercely and when to execute surgical settlements.
+                {t("standard.card1.desc")}
               </p>
             </div>
             <div className="glass-card-dark rounded-xl border border-white/15 p-6 backdrop-blur-xl shadow-xl hover:-translate-y-1 transition-transform">
               <div className="size-10 rounded-lg glass-pill flex items-center justify-center text-primary border border-primary/30">
                 <Clock className="size-5" />
               </div>
-              <h3 className="mt-4 font-serif text-lg font-bold text-white">Rapid Response Agility</h3>
+              <h3 className="mt-4 font-serif text-lg font-bold text-white">{t("standard.card2.title")}</h3>
               <p className="mt-2 text-xs text-slate-300 leading-relaxed">
-                Critical situations do not observe business hours. When temporary restraining orders, regulatory subpoenas, or hostile moves emerge, our response team is deployed within hours.
+                {t("standard.card2.desc")}
               </p>
             </div>
             <div className="glass-card-dark rounded-xl border border-white/15 p-6 backdrop-blur-xl shadow-xl hover:-translate-y-1 transition-transform">
               <div className="size-10 rounded-lg glass-pill flex items-center justify-center text-primary border border-primary/30">
                 <Award className="size-5" />
               </div>
-              <h3 className="mt-4 font-serif text-lg font-bold text-white">Trial-Ready Leverage</h3>
+              <h3 className="mt-4 font-serif text-lg font-bold text-white">{t("standard.card3.title")}</h3>
               <p className="mt-2 text-xs text-slate-300 leading-relaxed">
-                Opponents negotiate differently when they know counsel is fully prepared to take the matter through verdict. Our courtroom readiness delivers tangible settlement leverage.
+                {t("standard.card3.desc")}
               </p>
             </div>
             <div className="glass-card-dark rounded-xl border border-white/15 p-6 backdrop-blur-xl shadow-xl hover:-translate-y-1 transition-transform">
               <div className="size-10 rounded-lg glass-pill flex items-center justify-center text-primary border border-primary/30">
                 <FileText className="size-5" />
               </div>
-              <h3 className="mt-4 font-serif text-lg font-bold text-white">Transparent Billing</h3>
+              <h3 className="mt-4 font-serif text-lg font-bold text-white">{t("standard.card4.title")}</h3>
               <p className="mt-2 text-xs text-slate-300 leading-relaxed">
-                No opaque billing or surprise allocations. We offer structured phase estimates, fixed-scope matter evaluations, and regular fiduciary accountability.
+                {t("standard.card4.desc")}
               </p>
             </div>
           </div>
@@ -419,12 +422,12 @@ export function Index() {
       <section className="relative z-10 border-t border-white/10 py-24 bg-slate-950/80 backdrop-blur-2xl">
         <div className="mx-auto max-w-7xl px-6">
           <div className="text-center max-w-3xl mx-auto">
-            <p className="text-xs uppercase font-semibold tracking-[0.25em] text-brand-green">Client Trust & Advisory Impact</p>
+            <p className="text-xs uppercase font-semibold tracking-[0.25em] text-brand-green">{t("impact.eyebrow")}</p>
             <h2 className="mt-3 font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-white">
-              Trusted by corporate boards, fund managers, and private clients
+              {t("impact.title")}
             </h2>
             <p className="mt-4 text-sm text-slate-300">
-              Representative feedback from leadership teams and institutional general counsels.
+              {t("impact.desc")}
             </p>
           </div>
 
@@ -468,23 +471,23 @@ export function Index() {
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2 text-xs uppercase font-semibold tracking-[0.25em] text-brand-green mb-2">
               <Sparkles className="size-3.5" />
-              <span>Confidential Consultation</span>
+              <span>{t("cta.badge")}</span>
             </div>
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-white">
-              When the stakes require experienced counsel.
+              {t("cta.title")}
             </h2>
             <p className="mt-4 text-slate-300 text-base leading-relaxed">
-              Whether you are preparing for a transformative transaction, confronting complex litigation, or conducting an internal inquiry, our partners are ready to evaluate your objectives under strict confidentiality.
+              {t("cta.desc")}
             </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 shrink-0">
             <Button asChild size="lg" className="bg-primary text-white hover:bg-primary/90 px-8 py-6 text-sm font-semibold uppercase tracking-wider rounded-md shadow-lg shadow-primary/25 border border-white/20 transition-all hover:scale-[1.02]">
               <Link to="/assess-matter">
-                Assess Your Matter <ArrowRight className="ml-2 size-4" />
+                {t("cta.assess")} <ArrowRight className="ml-2 size-4" />
               </Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="glass-pill border-white/25 text-white hover:bg-white/15 px-8 py-6 text-sm font-semibold uppercase tracking-wider rounded-md transition-all hover:scale-[1.02]">
-              <Link to="/contact">Speak With a Partner</Link>
+              <Link to="/contact">{t("cta.speak")}</Link>
             </Button>
           </div>
         </div>
