@@ -21,7 +21,7 @@ import {
 export const Route = createFileRoute("/")({
   head: () =>
     siteMeta(
-      "Strategic Legal Counsel & Private Practice",
+      "Strategic Legal Counsel & Corporate Law Firm",
       "VANTAGE HALLCOUNSEL delivers strategic legal counsel, trial advocacy, and high-stakes corporate guidance for enterprises, funds, and leadership teams."
     ),
   component: Index,

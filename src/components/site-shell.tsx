@@ -142,7 +142,7 @@ export function Page({ title, intro, children }: { title: string; intro: string;
       <div className="relative z-10 mx-auto max-w-7xl">
         <div className="inline-flex items-center gap-2 rounded-full glass-pill px-3.5 py-1 text-xs uppercase tracking-[0.25em] text-brand-green mb-4">
           <span className="size-1.5 rounded-full bg-brand-green" />
-          <span>VANTAGE HALLCOUNSEL · STRATEGIC PRACTICE</span>
+          <span>VANTAGE HALLCOUNSEL · STRATEGIC ADVISORY</span>
         </div>
         <h1 className="text-4xl md:text-5xl font-serif font-bold text-white tracking-tight">{title}</h1>
         <p className="mt-6 max-w-3xl text-lg text-slate-300 leading-relaxed">{intro}</p>

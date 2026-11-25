@@ -28,7 +28,7 @@ export const translations: Record<LanguageCode, Record<string, string>> = {
   en: {
     // Nav
     "nav.home": "Home",
-    "nav.practiceAreas": "Practice Areas",
+    "nav.practiceAreas": "Legal Services",
     "nav.attorneys": "Attorneys",
     "nav.ourFirm": "Our Firm",
     "nav.insights": "Insights",
@@ -68,9 +68,9 @@ export const translations: Record<LanguageCode, Record<string, string>> = {
     // Practices
     "practices.eyebrow": "Disciplined Legal Capabilities",
     "practices.title": "Comprehensive counsel across commercial disciplines",
-    "practices.desc": "We structure our practice around the critical lifecycle events of businesses, institutions, and family offices. Each practice area operates under senior partner direction with unified strategic oversight.",
-    "practices.explore": "Explore Practice Scope",
-    "practices.browseAll": "Browse All 10 Practice Disciplines →",
+    "practices.desc": "We structure our legal advisory around the critical lifecycle events of businesses, institutions, and family offices. Each discipline operates under senior partner direction with unified strategic oversight.",
+    "practices.explore": "Explore Scope of Services",
+    "practices.browseAll": "Browse All 10 Legal Disciplines →",
 
     // Standard
     "standard.eyebrow": "The Vantage Standard",
@@ -106,7 +106,7 @@ export const translations: Record<LanguageCode, Record<string, string>> = {
     // Footer
     "footer.desc": "Strategic legal counsel for enterprise leadership, private capital sponsors, and institutional clients navigating complex transactions and disputes.",
     "footer.quick": "Quick Links",
-    "footer.practices": "Practice Areas",
+    "footer.practices": "Legal Services",
     "footer.services": "Client Services",
     "footer.rights": "© 2026 VANTAGE HALLCOUNSEL. All Rights Reserved.",
     "footer.disclaimer": "Attorney Advertising. Prior results do not guarantee a similar outcome.",

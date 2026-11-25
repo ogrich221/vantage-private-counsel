@@ -3,11 +3,11 @@ import { Button } from "@/components/ui/button";
 import { Page } from "./site-shell";
 import { practices, attorneys } from "@/lib/site-content";
 
-export function PracticeDirectory() { return <Page title="Practice Areas" intro="A considered perspective. Comprehensive counsel."><div className="grid gap-8 md:grid-cols-2">{practices.map(p => <article key={p.slug} className="border-b border-border pb-6"><h2 className="text-2xl">{p.name}</h2><p className="my-4">{p.intro}</p><Button asChild variant="outline"><Link to="/practice-areas/$slug" params={{ slug: p.slug }}>Explore Practice</Link></Button></article>)}</div></Page>; }
+export function PracticeDirectory() { return <Page title="Legal Services" intro="A considered perspective. Comprehensive counsel across corporate and commercial disciplines."><div className="grid gap-8 md:grid-cols-2">{practices.map(p => <article key={p.slug} className="border-b border-border pb-6"><h2 className="text-2xl">{p.name}</h2><p className="my-4">{p.intro}</p><Button asChild variant="outline"><Link to="/practice-areas/$slug" params={{ slug: p.slug }}>Explore Services</Link></Button></article>)}</div></Page>; }
 export function PracticeDetail({ slug }: { slug: string }) {
   const p = practices.find(item => item.slug === slug);
   if (!p) return null;
-  return <Page title={p.name} intro={p.intro}><div className="max-w-3xl"><h2 className="text-2xl">Focused on your objectives</h2><p className="mt-4">Our {p.name.toLowerCase()} practice brings together rigorous legal analysis, deep commercial understanding, and strategic execution. Every engagement begins with understanding the client's commercial objectives and the nuances of the matter.</p><h2 className="mt-8 text-2xl">Services and specializations</h2><ul className="mt-4 grid gap-3">{p.services.map(service => <li key={service}>— {service}</li>)}</ul><h2 className="mt-8 text-2xl">Why clients choose this approach</h2><p className="mt-4">Clear communication, practical options, and careful attention to the decisions that matter. We aim to present a coordinated perspective rather than advice in isolation. Every engagement is tailored to our clients' strategic priorities and risk parameters.</p><div className="mt-8 flex flex-wrap gap-3"><Button asChild><Link to="/consultation">Request a Consultation</Link></Button><Button asChild variant="outline"><Link to="/contact">Contact the Legal Team</Link></Button></div></div></Page>;
+  return <Page title={p.name} intro={p.intro}><div className="max-w-3xl"><h2 className="text-2xl">Focused on your objectives</h2><p className="mt-4">Our {p.name.toLowerCase()} group brings together rigorous legal analysis, deep commercial understanding, and strategic execution. Every engagement begins with understanding the client's commercial objectives and the nuances of the matter.</p><h2 className="mt-8 text-2xl">Services and specializations</h2><ul className="mt-4 grid gap-3">{p.services.map(service => <li key={service}>— {service}</li>)}</ul><h2 className="mt-8 text-2xl">Why clients choose this approach</h2><p className="mt-4">Clear communication, practical options, and careful attention to the decisions that matter. We aim to present a coordinated perspective rather than advice in isolation. Every engagement is tailored to our clients' strategic priorities and risk parameters.</p><div className="mt-8 flex flex-wrap gap-3"><Button asChild><Link to="/consultation">Request a Consultation</Link></Button><Button asChild variant="outline"><Link to="/contact">Contact the Legal Team</Link></Button></div></div></Page>;
 }
 export function AttorneyDirectory() {
   return (
@@ -102,10 +102,10 @@ export function AttorneyDetail({ slug }: { slug: string }) {
           </div>
         )}
         <div className={a.image ? "md:col-span-8" : "md:col-span-12"}>
-          <h2 className="text-2xl font-serif font-bold">Biography & Practice Focus</h2>
+          <h2 className="text-2xl font-serif font-bold">Biography & Legal Focus</h2>
           <p className="mt-4 text-base text-muted-foreground leading-relaxed">{a.bio}</p>
 
-          <h2 className="mt-8 text-2xl font-serif font-bold">Key Areas of Practice & Experience</h2>
+          <h2 className="mt-8 text-2xl font-serif font-bold">Key Areas of Expertise & Experience</h2>
           <ul className="mt-4 grid gap-2.5">
             {a.experience.map((item) => (
               <li key={item} className="flex items-center gap-2 text-sm text-foreground">
@@ -135,7 +135,7 @@ export function FirmPage() {
         <section>
           <h2 className="text-2xl font-serif font-bold">VANTAGE HALLCOUNSEL</h2>
           <p className="mt-4 text-muted-foreground leading-relaxed">
-            VANTAGE HALLCOUNSEL is a premier corporate law practice built around an uncompromising philosophy: legal counsel should connect sound legal analysis with the commercial realities of our clients' world. Our multidisciplinary practice brings together corporate transactions, high-stakes dispute resolution, and regulatory strategy.
+            VANTAGE HALLCOUNSEL is a premier corporate law firm built around an uncompromising philosophy: legal counsel should connect sound legal analysis with the commercial realities of our clients' world. Our multidisciplinary legal team brings together corporate transactions, high-stakes dispute resolution, and regulatory strategy.
           </p>
         </section>
         <section>

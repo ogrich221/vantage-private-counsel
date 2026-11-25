@@ -53,7 +53,7 @@ export const LAWYER_FEES: LawyerTier[] = [
     fee: 1000,
     feeFormatted: "$1,000",
     level: "Associate Level II",
-    description: "Commercial contract review, standard motion practice, due diligence audit, and regulatory filing preparation.",
+    description: "Commercial contract review, standard court filings, due diligence audit, and regulatory filing preparation.",
     features: [
       "Commercial agreement and NDA structuring",
       "Due diligence data room review",
@@ -94,7 +94,7 @@ export const LAWYER_FEES: LawyerTier[] = [
     position: "Senior Legal Counsel",
     fee: 2500,
     feeFormatted: "$2,500",
-    level: "Senior Practice Counsel",
+    level: "Senior Legal Counsel",
     description: "High-exposure corporate transactions, intellectual property portfolio defense, internal investigations, and executive counsel.",
     features: [
       "High-value transactional structuring",
@@ -196,16 +196,16 @@ export function PaymentPage() {
       intro="Review transparent lawyer engagement tiers, hiring fee schedules, and confidential matter onboarding."
     >
       <div className="space-y-12">
-        {/* TRANSPARENT DEMONSTRATION NOTICE BANNER */}
+        {/* PROFESSIONAL ENGAGEMENT NOTICE BANNER */}
         <div className="glass-pill rounded-xl p-5 border border-white/20 bg-white/[0.04] backdrop-blur-md flex items-start gap-4">
           <div className="p-2 rounded-lg bg-brand-green/20 text-brand-green shrink-0 mt-0.5">
             <Shield className="size-5" />
           </div>
           <div className="text-xs leading-relaxed text-slate-300">
             <strong className="text-white font-semibold block text-sm mb-1">
-              Demonstration Pricing & Engagement Notice
+              Official Engagement & Retainer Notice
             </strong>
-            All fees displayed below represent standardized demonstration pricing schedules for initial scoping and retainer evaluation. Fees are not charged automatically on this website, and no attorney-client relationship or hiring is established until officially confirmed in writing by the firm following conflict verification.
+            All fees displayed below represent standardized fee schedules for initial scoping and retainer evaluation. In adherence to legal ethics standards, no attorney-client relationship or formal hiring is finalized until officially confirmed in writing by the firm following conflict verification.
           </div>
         </div>
 
@@ -255,7 +255,7 @@ export function PaymentPage() {
                   <span className="text-3xl font-serif font-bold text-brand-green">
                     {selectedTier.feeFormatted}
                   </span>
-                  <span className="block text-[0.65rem] text-slate-400 mt-0.5">Demonstration Pricing</span>
+                  <span className="block text-[0.65rem] text-slate-400 mt-0.5">Standard Retainer</span>
                 </div>
               </div>
 
@@ -373,7 +373,7 @@ export function PaymentPage() {
                     </div>
 
                     <span className="inline-block mt-1 text-[0.65rem] uppercase tracking-wider text-brand-green font-medium">
-                      Demonstration Pricing
+                      Standard Retainer
                     </span>
 
                     <p className="mt-4 text-xs text-slate-300 leading-relaxed border-t border-white/10 pt-3">
