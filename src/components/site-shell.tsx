@@ -3,6 +3,7 @@ import { useState, type ReactNode } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { LanguageProvider, LanguageSwitcher, useLanguage } from "@/lib/i18n";
+import { openLiveChat } from "./live-chat";
 
 export function SiteShell({ children }: { children: ReactNode }) {
   return (
@@ -90,6 +91,14 @@ function SiteShellContent({ children }: { children: ReactNode }) {
               <Link to="/attorneys" className="hover:text-white transition-colors">{t("nav.attorneys")}</Link>
               <Link to="/insights" className="hover:text-white transition-colors">{t("nav.insights")}</Link>
               <Link to="/contact" className="hover:text-white transition-colors">{t("nav.contact")}</Link>
+              <button
+                type="button"
+                onClick={openLiveChat}
+                className="text-left text-brand-green hover:underline flex items-center gap-1.5 transition-colors cursor-pointer"
+              >
+                <span className="size-2 rounded-full bg-brand-green animate-pulse" />
+                Live Legal Chat
+              </button>
               <a href="mailto:contactformoreinfo@vantagehallcounsel.click" className="text-brand-green hover:text-white transition-colors">Webmail: Contact Us</a>
             </div>
           </div>

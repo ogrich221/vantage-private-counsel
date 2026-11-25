@@ -19,7 +19,9 @@ import {
   Lock,
   Building2,
   FileCheck,
+  MessageSquare,
 } from "lucide-react";
+import { openLiveChat } from "./live-chat";
 
 export interface LawyerTier {
   id: string;
@@ -297,15 +299,26 @@ export function PaymentPage() {
 
             {/* ACTION BUTTONS: PROMINENT CONTACT SUPPORT BUTTON */}
             <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-between items-center pt-6 border-t border-white/10">
-              <Button
-                asChild
-                size="lg"
-                className="w-full sm:w-auto bg-primary text-white hover:bg-primary/90 font-semibold px-8 py-6 text-sm uppercase tracking-wider rounded-md shadow-lg shadow-primary/25 border border-white/20 transition-all hover:scale-[1.02]"
-              >
-                <Link to="/contact">
-                  <Mail className="mr-2 size-4" /> Contact Support Team
-                </Link>
-              </Button>
+              <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
+                <Button
+                  asChild
+                  size="lg"
+                  className="w-full sm:w-auto bg-primary text-white hover:bg-primary/90 font-semibold px-8 py-6 text-sm uppercase tracking-wider rounded-md shadow-lg shadow-primary/25 border border-white/20 transition-all hover:scale-[1.02]"
+                >
+                  <Link to="/contact">
+                    <Mail className="mr-2 size-4" /> Contact Support Team
+                  </Link>
+                </Button>
+
+                <Button
+                  type="button"
+                  size="lg"
+                  onClick={openLiveChat}
+                  className="w-full sm:w-auto bg-brand-green/20 text-brand-green hover:bg-brand-green/30 border border-brand-green/40 font-semibold px-6 py-6 text-xs uppercase tracking-wider rounded-md shadow-sm transition-all"
+                >
+                  <MessageSquare className="mr-2 size-4" /> Live Support Chat
+                </Button>
+              </div>
 
               <Button
                 variant="outline"

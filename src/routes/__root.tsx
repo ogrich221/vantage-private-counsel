@@ -14,6 +14,7 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SiteShell } from "@/components/site-shell";
 import { supabase } from "@/integrations/supabase/client";
+import { LiveChat } from "@/components/live-chat";
 
 function NotFoundComponent() {
   return (
@@ -138,6 +139,7 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <SiteShell><Outlet /></SiteShell>
+      <LiveChat />
     </QueryClientProvider>
   );
 }

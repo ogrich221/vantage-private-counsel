@@ -4,7 +4,8 @@ import { Page } from "@/components/site-shell";
 import { InquiryForm } from "@/components/inquiry-form";
 import { siteMeta, FIRM_EMAIL, FIRM_PHONE, FIRM_ADDRESS, FIRM_WEBMAIL_URL } from "@/lib/site-content";
 import { Button } from "@/components/ui/button";
-import { Mail, Phone, MapPin, ExternalLink, ShieldCheck, Clock, Copy, Check } from "lucide-react";
+import { Mail, Phone, MapPin, ExternalLink, ShieldCheck, Clock, Copy, Check, MessageSquare } from "lucide-react";
+import { openLiveChat } from "@/components/live-chat";
 
 export const Route = createFileRoute("/contact")({
   head: () =>
@@ -91,14 +92,22 @@ function ContactPage() {
             </div>
 
             {/* Action Buttons */}
-            <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div className="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-2.5">
               <Button
                 asChild
                 className="bg-primary text-white hover:bg-primary/90 font-semibold text-xs uppercase tracking-wider rounded-md shadow-md shadow-primary/20"
               >
                 <a href={`mailto:${FIRM_EMAIL}?subject=Confidential%20Legal%20Matter%20Inquiry%20-%20Vantage%20Hall%20Counsel`}>
-                  <Mail className="mr-1.5 size-3.5" /> Email Webmail
+                  <Mail className="mr-1.5 size-3.5" /> Email
                 </a>
+              </Button>
+
+              <Button
+                type="button"
+                onClick={openLiveChat}
+                className="bg-brand-green/20 text-brand-green hover:bg-brand-green/30 border border-brand-green/40 font-semibold text-xs uppercase tracking-wider rounded-md shadow-sm transition-all"
+              >
+                <MessageSquare className="mr-1.5 size-3.5" /> Live Chat
               </Button>
 
               <Button
@@ -107,7 +116,7 @@ function ContactPage() {
                 className="glass-pill border-white/20 text-slate-200 hover:text-white text-xs uppercase tracking-wider"
               >
                 <a href={FIRM_WEBMAIL_URL} target="_blank" rel="noopener noreferrer">
-                  <ExternalLink className="mr-1.5 size-3.5" /> Webmail Login
+                  <ExternalLink className="mr-1.5 size-3.5" /> Webmail
                 </a>
               </Button>
             </div>
