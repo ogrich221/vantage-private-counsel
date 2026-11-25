@@ -103,14 +103,6 @@ export function Index() {
             >
               <Link to="/consultation">{t("hero.cta.consult")}</Link>
             </Button>
-            <Button
-              asChild
-              size="lg"
-              variant="ghost"
-              className="text-slate-300 hover:text-white hover:bg-white/10 uppercase tracking-wider text-xs px-5 py-6 rounded-md transition-all"
-            >
-              <Link to="/pay-online">{t("hero.cta.portal")}</Link>
-            </Button>
           </div>
 
           {/* KEY CREDIBILITY & BENCHMARK METRICS IN A FLOATING FROSTED GLASS SHELF */}
@@ -185,7 +177,7 @@ export function Index() {
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-90" />
                   <div className="absolute bottom-3 left-3 right-3">
                     <span className="glass-pill inline-block rounded-full px-3 py-1 text-[0.65rem] uppercase tracking-wider font-semibold text-brand-green border border-brand-green/30">
-                      {lawyer.practice.split("&")[0].trim()}
+                      {lawyer.practice.split("&")[0]?.trim() ?? ""}
                     </span>
                   </div>
                 </div>

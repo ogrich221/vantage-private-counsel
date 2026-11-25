@@ -24,6 +24,15 @@ export const SUPPORTED_LANGUAGES: LanguageOption[] = [
   { code: "ru", name: "Russian", nativeName: "Русский", flag: "🇷🇺", dir: "ltr" },
 ];
 
+export const DEFAULT_LANGUAGE: LanguageOption =
+  SUPPORTED_LANGUAGES.find((l) => l.code === "en") ?? {
+    code: "en",
+    name: "English",
+    nativeName: "English",
+    flag: "🇺🇸",
+    dir: "ltr",
+  };
+
 export const translations: Record<LanguageCode, Record<string, string>> = {
   en: {
     // Nav
@@ -827,7 +836,7 @@ const LanguageContext = createContext<LanguageContextType>({
   currentLang: "en",
   setLanguage: () => {},
   t: (key) => key,
-  currentOption: SUPPORTED_LANGUAGES[0],
+  currentOption: DEFAULT_LANGUAGE,
   dir: "ltr",
 });
 
@@ -858,7 +867,8 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
   };
 
-  const currentOption = SUPPORTED_LANGUAGES.find((l) => l.code === currentLang) || SUPPORTED_LANGUAGES[0];
+  const currentOption =
+    SUPPORTED_LANGUAGES.find((l) => l.code === currentLang) ?? DEFAULT_LANGUAGE;
   const dir = currentOption.dir || "ltr";
 
   const t = (key: string): string => {
