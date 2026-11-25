@@ -25,7 +25,30 @@ export function InquiryForm({ kind = "consultation", stepped = false }: { kind?:
     } catch (err) { setError(err instanceof Error ? err.message : "Something went wrong. Please try again."); }
     finally { setBusy(false); }
   }
-  if (confirmation) return <section role="status" className="glass-card-dark p-6 rounded-xl border border-white/20"><h2 className="text-xl font-serif font-bold text-white">Inquiry Received</h2><p className="mt-2 text-slate-300">Your reference number is VH-{confirmation}. A member of our partner intake team will review your matter and respond within one business day. Submitting this inquiry does not create an attorney-client relationship until formal engagement is executed.</p></section>;
+  if (confirmation)
+    return (
+      <section role="status" className="glass-card-dark p-6 md:p-8 rounded-xl border border-white/20 space-y-4">
+        <h2 className="text-xl font-serif font-bold text-white">Inquiry Received</h2>
+        <p className="text-slate-300 text-sm leading-relaxed">
+          Your reference number is <strong className="text-brand-green font-mono">VH-{confirmation}</strong>. A member of our partner intake team will review your matter and respond within one business day.
+        </p>
+        <div className="p-4 rounded-lg bg-white/[0.04] border border-white/10 text-xs text-slate-300 space-y-2">
+          <p className="font-semibold text-white">Have supporting contracts or case documents?</p>
+          <p>
+            You can forward confidential attachments directly to our official webmail at:
+          </p>
+          <a
+            href={`mailto:contactformoreinfo@vantagehallcounsel.click?subject=Matter%20Documents%20-%20Ref%20VH-${confirmation}`}
+            className="text-brand-green font-mono font-medium hover:underline inline-block"
+          >
+            contactformoreinfo@vantagehallcounsel.click
+          </a>
+        </div>
+        <p className="text-[0.7rem] text-slate-400">
+          Submitting this inquiry does not create an attorney-client relationship until formal engagement is executed.
+        </p>
+      </section>
+    );
   return <form onSubmit={submit} className="grid gap-5">
     {stepped && <p className="text-sm font-medium text-slate-400">Step {step} of 3 — {step === 1 ? "Your matter" : step === 2 ? "Your details" : "Review and submit"}</p>}
     <fieldset hidden={stepped && step !== 1} disabled={false} className="grid gap-4">

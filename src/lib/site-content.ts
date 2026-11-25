@@ -91,3 +91,9 @@ export function siteMeta(title: string, description: string) {
   const branded = `${title} | VANTAGE HALLCOUNSEL`;
   return { meta: [{ title: branded }, { name: "description", content: description }, { property: "og:title", content: branded }, { property: "og:description", content: description }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" }] };
 }
+
+export const FIRM_EMAIL = "contactformoreinfo@vantagehallcounsel.click";
+export const FIRM_DOMAIN = "vantagehallcounsel.click";
+export const FIRM_PHONE = "+1 (212) 555-0146";
+export const FIRM_ADDRESS = "450 Lexington Avenue, New York, NY";
+export const FIRM_WEBMAIL_URL = "https://webmail.vantagehallcounsel.click";

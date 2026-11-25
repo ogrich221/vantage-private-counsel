@@ -78,7 +78,7 @@ function SiteShellContent({ children }: { children: ReactNode }) {
               {t("footer.desc")}
             </p>
             <p className="mt-5 text-xs text-navy-foreground/70 leading-relaxed">
-              Client Inquiries: inquiries@vantagehallcounsel.com<br />
+              Official Webmail: <a href="mailto:contactformoreinfo@vantagehallcounsel.click" className="text-brand-green hover:underline font-medium">contactformoreinfo@vantagehallcounsel.click</a><br />
               Telephone: +1 (212) 555-0146<br />
               Primary Chambers: 450 Lexington Avenue, New York, NY
             </p>
@@ -90,6 +90,7 @@ function SiteShellContent({ children }: { children: ReactNode }) {
               <Link to="/attorneys" className="hover:text-white transition-colors">{t("nav.attorneys")}</Link>
               <Link to="/insights" className="hover:text-white transition-colors">{t("nav.insights")}</Link>
               <Link to="/contact" className="hover:text-white transition-colors">{t("nav.contact")}</Link>
+              <a href="mailto:contactformoreinfo@vantagehallcounsel.click" className="text-brand-green hover:text-white transition-colors">Webmail: Contact Us</a>
             </div>
           </div>
           <div>
@@ -109,6 +110,9 @@ function SiteShellContent({ children }: { children: ReactNode }) {
               <Link to="/pay-online" className="hover:text-white transition-colors">{t("nav.payOnline")}</Link>
               <Link to="/consultation" className="hover:text-white transition-colors">Request Consultation</Link>
               <Link to="/assess-matter" className="hover:text-white transition-colors">{t("nav.assessMatter")}</Link>
+              <a href="https://webmail.vantagehallcounsel.click" target="_blank" rel="noopener noreferrer" className="hover:text-brand-green transition-colors flex items-center gap-1">
+                Webmail Access <span className="text-[0.65rem] opacity-75">↗</span>
+              </a>
               <Link to="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
               <Link to="/terms-of-service" className="hover:text-white transition-colors">Terms of Service</Link>
               <Link to="/legal-disclaimer" className="hover:text-white transition-colors">Legal Disclaimer</Link>

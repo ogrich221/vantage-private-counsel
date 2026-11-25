@@ -278,9 +278,20 @@ export function PaymentPage() {
             <div className="mt-8 rounded-xl border border-primary/40 bg-primary/10 p-6 backdrop-blur-md">
               <div className="flex items-start gap-3.5">
                 <Sparkles className="size-5 text-primary shrink-0 mt-0.5" />
-                <p className="font-serif italic text-base leading-relaxed text-slate-100">
-                  “Thank you for choosing VANTAGE HALLCOUNSEL. To proceed with your lawyer engagement, please contact our Support Team for assistance with the hiring process, payment instructions, and the next steps.”
-                </p>
+                <div className="space-y-3">
+                  <p className="font-serif italic text-base leading-relaxed text-slate-100">
+                    “Thank you for choosing VANTAGE HALLCOUNSEL. To proceed with your lawyer engagement, please contact our Support Team for assistance with the hiring process, payment instructions, and the next steps.”
+                  </p>
+                  <p className="text-xs text-slate-300">
+                    Support Webmail:{" "}
+                    <a
+                      href="mailto:contactformoreinfo@vantagehallcounsel.click?subject=Lawyer%20Engagement%20Payment%20Instructions"
+                      className="text-brand-green font-mono hover:underline font-medium"
+                    >
+                      contactformoreinfo@vantagehallcounsel.click
+                    </a>
+                  </p>
+                </div>
               </div>
             </div>
 
