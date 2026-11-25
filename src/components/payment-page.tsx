@@ -423,7 +423,7 @@ export function PaymentPage() {
                   Please sign in to your client account to associate payments directly with your active matter file.
                 </p>
                 <Button asChild>
-                  <Link to="/auth">Sign In to Client Portal</Link>
+                  <Link to="/contact">Client Portal Support</Link>
                 </Button>
               </div>
             ) : receipt ? (
