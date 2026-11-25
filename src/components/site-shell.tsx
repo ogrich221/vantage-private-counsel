@@ -59,7 +59,6 @@ function SiteShellContent({ children }: { children: ReactNode }) {
               <Link to="/attorneys" className="hover:text-brand-green transition-colors">{t("nav.attorneys")}</Link>
               <Link to="/our-firm" className="hover:text-brand-green transition-colors">{t("nav.ourFirm")}</Link>
               <Link to="/insights" className="hover:text-brand-green transition-colors">{t("nav.insights")}</Link>
-              <Link to="/pay-online" className="hover:text-brand-green transition-colors">{t("nav.payOnline")}</Link>
               <Link to="/assess-matter" className="hover:text-brand-green transition-colors">{t("nav.assessMatter")}</Link>
               <Link to="/contact" className="hover:text-brand-green transition-colors">{t("nav.contact")}</Link>
             </nav>
@@ -105,8 +104,6 @@ function SiteShellContent({ children }: { children: ReactNode }) {
           <div>
             <h2 className="text-sm font-semibold uppercase tracking-wider text-brand-green">{t("footer.services")}</h2>
             <div className="mt-4 grid gap-2.5 text-sm text-navy-foreground/80">
-              <Link to="/dashboard" className="hover:text-white transition-colors">{t("nav.clientPortal")}</Link>
-              <Link to="/pay-online" className="hover:text-white transition-colors">{t("nav.payOnline")}</Link>
               <Link to="/consultation" className="hover:text-white transition-colors">Request Consultation</Link>
               <Link to="/assess-matter" className="hover:text-white transition-colors">{t("nav.assessMatter")}</Link>
               <Link to="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
