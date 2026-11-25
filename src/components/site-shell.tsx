@@ -62,12 +62,6 @@ function SiteShellContent({ children }: { children: ReactNode }) {
               <Link to="/pay-online" className="hover:text-brand-green transition-colors">{t("nav.payOnline")}</Link>
               <Link to="/assess-matter" className="hover:text-brand-green transition-colors">{t("nav.assessMatter")}</Link>
               <Link to="/contact" className="hover:text-brand-green transition-colors">{t("nav.contact")}</Link>
-              <Link
-                to="/dashboard"
-                className="glass-pill px-4 py-2 font-semibold text-primary-foreground bg-primary hover:bg-primary/90 rounded-xs shadow-sm transition-all"
-              >
-                {t("nav.clientPortal")}
-              </Link>
             </nav>
           </div>
         </div>
