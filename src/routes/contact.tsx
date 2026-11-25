@@ -2,9 +2,9 @@ import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { Page } from "@/components/site-shell";
 import { InquiryForm } from "@/components/inquiry-form";
-import { siteMeta, FIRM_EMAIL, FIRM_PHONE, FIRM_ADDRESS, FIRM_WEBMAIL_URL } from "@/lib/site-content";
+import { siteMeta, FIRM_EMAIL, FIRM_ADDRESS, FIRM_WEBMAIL_URL } from "@/lib/site-content";
 import { Button } from "@/components/ui/button";
-import { Mail, Phone, MapPin, ExternalLink, ShieldCheck, Clock, Copy, Check, MessageSquare } from "lucide-react";
+import { Mail, MapPin, ExternalLink, ShieldCheck, Clock, Copy, Check, MessageSquare } from "lucide-react";
 import { openLiveChat } from "@/components/live-chat";
 
 export const Route = createFileRoute("/contact")({
@@ -145,16 +145,6 @@ function ContactPage() {
                 <div>
                   <strong className="text-white block font-medium">Primary Office</strong>
                   <span>{FIRM_ADDRESS}</span>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-3">
-                <Phone className="size-4 text-brand-green shrink-0 mt-0.5" />
-                <div>
-                  <strong className="text-white block font-medium">Telephone Direct</strong>
-                  <a href={`tel:${FIRM_PHONE}`} className="hover:text-brand-green transition-colors">
-                    {FIRM_PHONE}
-                  </a>
                 </div>
               </div>
             </div>

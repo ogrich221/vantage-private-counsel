@@ -80,7 +80,6 @@ function SiteShellContent({ children }: { children: ReactNode }) {
             </p>
             <p className="mt-5 text-xs text-navy-foreground/70 leading-relaxed">
               Official Webmail: <a href="mailto:contactformoreinfo@vantagehallcounsel.click" className="text-brand-green hover:underline font-medium">contactformoreinfo@vantagehallcounsel.click</a><br />
-              Telephone: +1 (212) 555-0146<br />
               Primary Chambers: 450 Lexington Avenue, New York, NY
             </p>
           </div>
